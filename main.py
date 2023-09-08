@@ -49,3 +49,16 @@ class PowerSet:
             self.storage.pop(index)
             return True
         return False
+
+    def set_intersection(self, set2):
+        intersection = PowerSet()
+        for val in self.storage:
+            if set2.get(val):
+                intersection.put(val)
+        return intersection
+
+    def intersection(self, set2):
+        if self.size() > set2.size():
+            return self.set_intersection(set2)
+        else:
+            return set2.set_intersection(self)
