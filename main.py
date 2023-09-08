@@ -43,13 +43,6 @@ class PowerSet:
                 return mid
         return None
 
-    def remove(self, value):
-        index = self.get_index(value)
-        if index is not None:
-            self.storage.pop(index)
-            return True
-        return False
-
     def set_intersection(self, set2):
         intersection = PowerSet()
         for val in self.storage:
