@@ -76,3 +76,12 @@ class PowerSet:
             return self.set_union(set2)
         else:
             return set2.set_union(self)
+
+    def difference(self, set2):
+        difference = PowerSet()
+        difference.storage = self.storage.copy()
+        for val in set2.storage:
+            index = difference.get_index(val)
+            if index is not None:
+                difference.storage.pop(index)
+        return difference
