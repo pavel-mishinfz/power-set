@@ -42,3 +42,10 @@ class PowerSet:
             else:
                 return mid
         return None
+
+    def remove(self, value):
+        index = self.get_index(value)
+        if index is not None:
+            self.storage.pop(index)
+            return True
+        return False
