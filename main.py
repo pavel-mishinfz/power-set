@@ -85,3 +85,9 @@ class PowerSet:
             if index is not None:
                 difference.storage.pop(index)
         return difference
+
+    def issubset(self, set2):
+        for val in set2.storage:
+            if self.get(val) is False:
+                return False
+        return True
