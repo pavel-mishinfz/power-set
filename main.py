@@ -91,3 +91,43 @@ class PowerSet:
             if self.get(val) is False:
                 return False
         return True
+
+    def print_set(self):
+        for val in self.storage:
+            print(val, end=' ')
+        print()
+
+
+while True:
+    print("\n1. Intersection of sets\n2. Union of sets\n3. Difference of sets\n"
+          "4. Subset\n0. Exit")
+    ch = input("Select operation: ")
+    if ch == '0':
+        break
+
+    print("Enter elements of set A: ")
+    set1 = PowerSet()
+    set1.create()
+
+    print("Enter elements of set B: ")
+    set2 = PowerSet()
+    set2.create()
+
+    if ch == '1':
+        print("Intersection of sets A and B:")
+        set1.intersection(set2).print_set()
+
+    elif ch == '2':
+        print("Union of sets A and B:")
+        set1.union(set2).print_set()
+
+    elif ch == '3':
+        print("Difference of sets A and B:")
+        set1.difference(set2).print_set()
+
+    elif ch == '4':
+        print("B is subset of A:")
+        print(set1.issubset(set2))
+
+    else:
+        break
