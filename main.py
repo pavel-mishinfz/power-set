@@ -62,3 +62,17 @@ class PowerSet:
             return self.set_intersection(set2)
         else:
             return set2.set_intersection(self)
+
+    def set_union(self, set2):
+        union = PowerSet()
+        union.storage = self.storage.copy()
+        for val in set2.storage:
+            if self.get(val) is False:
+                union.put(val)
+        return union
+
+    def union(self, set2):
+        if self.size() > set2.size():
+            return self.set_union(set2)
+        else:
+            return set2.set_union(self)
